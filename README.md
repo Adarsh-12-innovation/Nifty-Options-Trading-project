@@ -1,1 +1,0 @@
-# Nifty-Options-Trading-project
