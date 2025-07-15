@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "artful-wind-402414",
+  "private_key_id": "edfc43b570ab565e9856407d73f071d8c781463e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDml3gX3dprtulx\nfnKAvQzmyCt28M5UT/eQ77fes0+rJ338GsshcxPdW3VxNjmuyZBqUmDoPu1PQ8bL\naTEHBBkYoeGjvXCQ1JDPNZVOoseXdWoqrFXTcKlbGgSMvTl27jKuuCgO07ifDY9U\nFnZZJ2E9Jan5CfrEz0S0XoTUFqFi8IKMf0pwSEjmssUoTkFC2PVFUExnlPAMEIvE\nnLGiqilKGtKWmR2m7xrEDM1j2wE0CKMF/YDdzClyYrkCdGjALVpRJMwhDhp0U/Ib\nOKAu1dbG5+Y+yWcXYxQ+ke2UTmA3S0AdeQnp/ztfCfvpYVrUakToLQWQDMEHbQyx\nPd/5+eKxAgMBAAECggEAaagrydvIsiRMkMlck+qL188OQ2CRWgaOLCX6/RryPT1K\nN9LbEoeVKY83n9k10wXemykF6ES1HeWzWA7p/Qn+qc+7APjTdDlB5P/rWu2xQI/3\nRnhSlyB/KRQh0478nqcEKBSPnkOay54990yXi8BEiO0SFd9hvP4vv+mzOS7pYdht\na6ERjcY5YrUIJufs0z69Gn6BaHiofGcqhBR47SPF27ChYGnp5TVgS3cCObpK35yr\nTfV6phu+GDtBrk22scU9WMbPGe/xVMXdO5ZxOcXZU8Vkr1uwxn2uWEL4bsHd0IVt\nrdpPVqYzlGlCKk5hd1IhfAOQ9wonIRl9LeL7R7mPFQKBgQD5wxpzfAFHn3q4y3rD\nb52o3nI9vgHcpHr7TPTlm7XpjFQhaRj3fzA8FPh5XU/aN0d5UtbihStL/3BV3yeK\ntdFMxY28M6E/cXBH78dtsv2NjA6BEuRFvWQjywGVx+iIFqJG9Uz45N8zgUsPr3Qu\nndjIjDUtwlHfaZcc/+xj2fgJPwKBgQDsWcvYx6ivI7eGc3N5xjWBxoOFiVcv+MCi\nP6d7Q4TX1WLwfkPMGomz/dlCsBGy3iuf/RdAStk204h7FIGAVBopVkF618EJ2+2P\n84DXo3gHRBWR551Hl/PMYdrC14DjtbpNlkhGPhXOo/ssVrPX6TtrCPen1heU7DOb\njijRmaCoDwKBgQCPDM/5lOymuRDxBpoplaQXNFD6S/mFBi/p/wnE+IoYWedVu3wx\nRQe7Ycduu6MguMiXFHs/AkbqIEOW61kaeUiHUB79zBRu4eoNSahPjFTs3WrxQoC7\n8N2KIpulzfnA+DW5roWHiI7OUR9MvJEuofmn46YRr1p1O2TxlyMtjYoiwQKBgQDF\nI4EsKB1DOH9z3giLohAvVu2NDKl0kf/bVUzVO9QqUwpbnnXeYKRLRYlaXpHkp/ur\nTud98PCNEpPcVZZO+9d2c0PauuuA1bipQWpOc0NCjD+Rm6dMeCoaZ+SYcDhJtuLW\npGtUa6S034I50Xfgt+GfvbMUgzbYOMwzC7hwW7vtcQKBgQDveyyST8E/s4AyoF8c\npWZ8E8i9h5FiENoAbfE1TcCZNFzqmavI3uzmw6FI1xn2gFgixfikAQ1Djk7GWrYc\nWTJ80/tH+UM5iNwjDfyvWk12f3zAp6S9uFudyxbjkI6e/3zFVnxPIHVR4oXJ8+Bj\nZ4+UzJNgCxNffUcAKE9Dn+/Wcg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account-gsheet@artful-wind-402414.iam.gserviceaccount.com",
+  "client_id": "105774581805860117714",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account-gsheet%40artful-wind-402414.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

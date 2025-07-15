@@ -1,0 +1,16 @@
+tradable <class 'bool'>
+mode <class 'str'>
+instrument_token <class 'int'>
+last_price <class 'float'>
+last_traded_quantity <class 'int'>
+average_traded_price <class 'float'>
+volume_traded <class 'int'>
+total_buy_quantity <class 'int'>
+total_sell_quantity <class 'int'>
+ohlc <class 'dict'>
+change <class 'float'>
+
+open <class 'float'>
+high <class 'float'>
+low <class 'float'>
+close <class 'float'>

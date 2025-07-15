@@ -1,0 +1,481 @@
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 133, in _call_sslobject_method
+    result = func(*args)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 889, in read
+    v = self._sslobj.read(len)
+ssl.SSLWantReadError: The operation did not complete (read) (_ssl.c:2633)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_core\_tasks.py", line 115, in fail_after
+    yield cancel_scope
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 34, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 198, in receive
+    data = await self._call_sslobject_method(self._ssl_object.read, max_bytes)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 140, in _call_sslobject_method
+    data = await self.transport_stream.receive()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1103, in receive
+    await self._protocol.read_event.wait()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\asyncio\locks.py", line 226, in wait
+    await fut
+asyncio.exceptions.CancelledError: Cancelled by cancel scope 2bf81435e20
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_exceptions.py", line 10, in map_exceptions
+    yield
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 36, in read
+    return b""
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_core\_tasks.py", line 118, in fail_after
+    raise TimeoutError
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 262, in handle_async_request
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 245, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 133, in handle_async_request
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 111, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 176, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 212, in _receive_event
+    data = await self._network_stream.read(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 36, in read
+    return b""
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 219, in do_request
+    res = await self._client.request(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 27, in <module>
+    build_and_run_app(msg)
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\Telegram_utls.py", line 100, in build_and_run_app
+    application_.run_polling()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_application.py", line 779, in run_polling
+    return self.__run(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_application.py", line 973, in __run
+    loop.run_until_complete(self.updater.stop())  # type: ignore[union-attr]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 764, in stop
+    await self._stop_polling()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 789, in _stop_polling
+    await self.__polling_cleanup_cb()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 393, in _get_updates_cleanup
+    await self.bot.get_updates(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_extbot.py", line 565, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 519, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 3562, in get_updates
+    await self._post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 607, in _post
+    return await self._do_post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_extbot.py", line 347, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 635, in _do_post
+    return await request.post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 168, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 278, in _request_wrapper
+    code, payload = await self.do_request(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 236, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 133, in _call_sslobject_method
+    result = func(*args)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 889, in read
+    v = self._sslobj.read(len)
+ssl.SSLWantReadError: The operation did not complete (read) (_ssl.c:2633)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_core\_tasks.py", line 115, in fail_after
+    yield cancel_scope
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 34, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 198, in receive
+    data = await self._call_sslobject_method(self._ssl_object.read, max_bytes)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 140, in _call_sslobject_method
+    data = await self.transport_stream.receive()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1103, in receive
+    await self._protocol.read_event.wait()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\asyncio\locks.py", line 226, in wait
+    await fut
+asyncio.exceptions.CancelledError: Cancelled by cancel scope 2cec1edb760
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_exceptions.py", line 10, in map_exceptions
+    yield
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 36, in read
+    return b""
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_core\_tasks.py", line 118, in fail_after
+    raise TimeoutError
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 262, in handle_async_request
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 245, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 133, in handle_async_request
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 111, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 176, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 212, in _receive_event
+    data = await self._network_stream.read(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 36, in read
+    return b""
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 219, in do_request
+    res = await self._client.request(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 30, in <module>
+    build_and_run_app(msg)
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\Telegram_utls.py", line 100, in build_and_run_app
+    application_.run_polling()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_application.py", line 779, in run_polling
+    return self.__run(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_application.py", line 973, in __run
+    loop.run_until_complete(self.updater.stop())  # type: ignore[union-attr]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 764, in stop
+    await self._stop_polling()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 789, in _stop_polling
+    await self.__polling_cleanup_cb()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 393, in _get_updates_cleanup
+    await self.bot.get_updates(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_extbot.py", line 565, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 519, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 3562, in get_updates
+    await self._post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 607, in _post
+    return await self._do_post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_extbot.py", line 347, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 635, in _do_post
+    return await request.post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 168, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 278, in _request_wrapper
+    code, payload = await self.do_request(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 236, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 31, in <module>
+    thread_ = threading.Thread(build_and_run_app, msg)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\threading.py", line 825, in __init__
+    assert group is None, "group argument must be None for now"
+AssertionError: group argument must be None for now
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 31, in <module>
+    thread_ = threading.Thread(build_and_run_app, msg)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\threading.py", line 825, in __init__
+    assert group is None, "group argument must be None for now"
+AssertionError: group argument must be None for now
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 133, in _call_sslobject_method
+    result = func(*args)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 889, in read
+    v = self._sslobj.read(len)
+ssl.SSLWantReadError: The operation did not complete (read) (_ssl.c:2633)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_core\_tasks.py", line 115, in fail_after
+    yield cancel_scope
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 34, in read
+    return await self._stream.receive(max_bytes=max_bytes)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 198, in receive
+    data = await self._call_sslobject_method(self._ssl_object.read, max_bytes)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\streams\tls.py", line 140, in _call_sslobject_method
+    data = await self.transport_stream.receive()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_backends\_asyncio.py", line 1103, in receive
+    await self._protocol.read_event.wait()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\asyncio\locks.py", line 226, in wait
+    await fut
+asyncio.exceptions.CancelledError: Cancelled by cancel scope 257b0443250
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_exceptions.py", line 10, in map_exceptions
+    yield
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 36, in read
+    return b""
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\anyio\_core\_tasks.py", line 118, in fail_after
+    raise TimeoutError
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 66, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 262, in handle_async_request
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection_pool.py", line 245, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 133, in handle_async_request
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 111, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 176, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_async\http11.py", line 212, in _receive_event
+    data = await self._network_stream.read(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_backends\anyio.py", line 36, in read
+    return b""
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 219, in do_request
+    res = await self._client.request(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1530, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1617, in send
+    response = await self._send_handling_auth(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1645, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1682, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_client.py", line 1719, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 366, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\contextlib.py", line 137, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\httpx\_transports\default.py", line 83, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 36, in <module>
+    build_and_run_app(msg)
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\Telegram_utls.py", line 100, in build_and_run_app
+    application_.run_polling()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_application.py", line 779, in run_polling
+    return self.__run(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_application.py", line 973, in __run
+    loop.run_until_complete(self.updater.stop())  # type: ignore[union-attr]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 764, in stop
+    await self._stop_polling()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 789, in _stop_polling
+    await self.__polling_cleanup_cb()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_updater.py", line 393, in _get_updates_cleanup
+    await self.bot.get_updates(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_extbot.py", line 565, in get_updates
+    updates = await super().get_updates(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 519, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 3562, in get_updates
+    await self._post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 607, in _post
+    return await self._do_post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\ext\_extbot.py", line 347, in _do_post
+    return await super()._do_post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\_bot.py", line 635, in _do_post
+    return await request.post(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 168, in post
+    result = await self._request_wrapper(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 288, in _request_wrapper
+    raise exc
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_baserequest.py", line 278, in _request_wrapper
+    code, payload = await self.do_request(
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\telegram\request\_httpxrequest.py", line 236, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 32, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 33, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 33, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 33, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 34, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 34, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 34, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 34, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 34, in <module>
+    time.sleep(120)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 19, in <module>
+    kite_, api_key_, access_token_ = kite_auth()
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\KiteAuto.py", line 192, in kite_auth
+    with open(os.path.join(wd, "key", "access_token.txt")) as f:
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 19, in <module>
+    kite_, api_key_, access_token_ = kite_auth()
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\KiteAuto.py", line 194, in kite_auth
+    if access_token_ == "":
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 35, in <module>
+    request_token, access_token = kite_auto_set()
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\KiteAuto.py", line 163, in kite_auto_set
+    request_token_ = get_request_token()
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\KiteAuto.py", line 80, in get_request_token
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\chrome.py", line 40, in install
+    driver_path = self._get_driver_binary_path(self.driver)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\manager.py", line 35, in _get_driver_binary_path
+    binary_path = self._cache_manager.find_driver(driver)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\driver_cache.py", line 105, in find_driver
+    driver_version = self.get_cache_key_driver_version(driver)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\driver_cache.py", line 152, in get_cache_key_driver_version
+    return driver.get_driver_version_to_download()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\driver.py", line 48, in get_driver_version_to_download
+    return self.get_latest_release_version()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\drivers\chrome.py", line 55, in get_latest_release_version
+    determined_browser_version = self.get_browser_version_from_os()
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\driver.py", line 63, in get_browser_version_from_os
+    self._browser_version = self._os_system_manager.get_browser_version_from_os(self.get_browser_type())
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\os_manager.py", line 159, in get_browser_version_from_os
+    version = read_version_from_cmd(cmd_mapping, pattern)
+  File "C:\Users\Administrator\Downloads\Nifty-project\venv\lib\site-packages\webdriver_manager\core\utils.py", line 45, in read_version_from_cmd
+    stdout = stream.communicate()[0].decode()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\subprocess.py", line 1121, in communicate
+    stdout = self.stdout.read()
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\ScheduleAccessToken.py", line 36, in <module>
+    set_access_token(request_token)
+  File "C:\Users\Administrator\Downloads\Nifty-project\Nifty_Kite\KiteAuto.py", line 156, in set_access_token
+    except Exception as e:
+KeyboardInterrupt
